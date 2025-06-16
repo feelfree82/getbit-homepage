@@ -1,47 +1,49 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { Award, Users, Shield } from 'lucide-react';
 
 const About = () => {
-  const highlights = [
-    'Founded in 2020 with a mission to democratize Bitcoin trading',
-    'Over 50,000 satisfied customers across India',
-    'Processed ₹1000+ Crores in Bitcoin transactions',
-    'Zero security incidents since inception',
-    'Regulatory compliant and fully licensed'
+  const stats = [
+    { icon: Users, value: '50,000+', label: 'Active Traders' },
+    { icon: Shield, value: '100%', label: 'Security Record' },
+    { icon: Award, value: '2020', label: 'Founded' },
   ];
 
   return (
-    <section id="about" className="py-20 bg-bg-02">
+    <section id="about" className="py-24 bg-bg-02">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-dm-serif text-text-primary-dark mb-6">
-              About GetBit.in
+            <h2 className="text-5xl font-dm-serif text-text-primary-dark mb-8">
+              India's Most Trusted Bitcoin Exchange
             </h2>
-            <p className="text-lg text-text-secondary-dark font-dm-mono mb-8 leading-relaxed">
-              We're India's most trusted Bitcoin exchange, built by traders for traders. 
-              Our platform combines cutting-edge technology with regulatory compliance 
-              to provide a secure, fast, and reliable Bitcoin trading experience.
+            <p className="text-xl text-text-secondary-dark font-dm-mono mb-12 leading-relaxed">
+              Built by traders, for traders. We combine cutting-edge security 
+              with regulatory compliance to deliver the most reliable Bitcoin 
+              trading experience in India.
             </p>
             
-            <div className="space-y-4">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-brand-green mt-1 flex-shrink-0" />
-                  <p className="text-text-secondary-dark font-dm-mono">{highlight}</p>
+            <div className="grid grid-cols-3 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <stat.icon className="w-8 h-8 text-brand-green mx-auto mb-3" />
+                  <div className="text-2xl font-dm-serif text-text-primary-dark mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-dm-mono text-text-secondary-dark">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" 
-              alt="Bitcoin trading dashboard" 
-              className="rounded-lg shadow-lg"
-            />
-            <div className="absolute inset-0 bg-brand-green opacity-10 rounded-lg"></div>
+            <div className="bg-gradient-to-br from-brand-green to-green-700 rounded-2xl p-12 text-white text-center">
+              <div className="text-6xl mb-4">₿</div>
+              <div className="text-2xl font-dm-serif mb-2">Secure Trading</div>
+              <div className="font-dm-mono opacity-90">Zero security incidents since 2020</div>
+            </div>
           </div>
         </div>
       </div>

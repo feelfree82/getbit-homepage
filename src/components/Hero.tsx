@@ -1,53 +1,57 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Star, Phone } from 'lucide-react';
+import { Shield, TrendingUp } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="bg-bg-01 py-20">
+    <section className="bg-bg-01 py-32">
       <div className="container mx-auto px-4 text-center">
-        {/* New Feature Banner */}
-        <div className="inline-flex items-center bg-text-primary-dark text-text-primary-white px-4 py-2 rounded-full mb-8 font-dm-mono text-sm">
-          <span className="bg-brand-green text-text-primary-white px-2 py-1 rounded-full text-xs mr-3">
-            New
-          </span>
-          Make your Bitcoin journey secure with{' '}
-          <span className="text-brand-green ml-1 font-medium">Advanced Security →</span>
+        {/* Security Badge */}
+        <div className="inline-flex items-center bg-brand-green text-text-primary-white px-6 py-3 rounded-full mb-12 font-dm-mono text-sm">
+          <Shield className="w-4 h-4 mr-2" />
+          Bank-Grade Security
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl font-dm-serif text-text-primary-dark mb-6 leading-tight">
-          A Bitcoin exchange that{' '}
-          <br />
-          works like an{' '}
-          <span className="text-brand-green">Expert</span>
+        <h1 className="text-6xl md:text-8xl font-dm-serif text-text-primary-dark mb-8 leading-tight">
+          Bitcoin Made{' '}
+          <span className="text-brand-green">Simple</span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-lg text-text-secondary-dark font-dm-mono max-w-2xl mx-auto mb-8 leading-relaxed">
-          Great traders deserve a platform that does it all, from secure Bitcoin purchases 
-          to smooth transactions, helping you invest and track performance.
+        <p className="text-xl text-text-secondary-dark font-dm-mono max-w-xl mx-auto mb-12">
+          Secure. Fast. Trusted by 50,000+ traders across India.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button className="bg-text-primary-dark text-text-primary-white hover:bg-gray-800 font-dm-mono px-8 py-3 flex items-center gap-2">
-            <Star className="w-4 h-4" />
-            Start Trading
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+          <Button className="bg-brand-green text-text-primary-white hover:bg-green-700 font-dm-mono px-12 py-4 text-lg">
+            Buy Bitcoin Now
           </Button>
-          <Button variant="outline" className="border-text-primary-dark text-text-primary-dark hover:bg-gray-50 font-dm-mono px-8 py-3 flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            Book a Call
+          <Button variant="outline" className="border-text-primary-dark text-text-primary-dark hover:bg-gray-50 font-dm-mono px-12 py-4 text-lg">
+            Learn More
           </Button>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-          <div className="text-text-secondary-dark font-dm-mono text-sm">Trusted by 50,000+ traders</div>
-          <div className="text-text-secondary-dark font-dm-mono text-sm">₹1000+ Crores traded</div>
-          <div className="text-text-secondary-dark font-dm-mono text-sm">99.9% uptime</div>
-          <div className="text-text-secondary-dark font-dm-mono text-sm">24/7 support</div>
+        {/* Trust Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="text-3xl font-dm-serif text-text-primary-dark mb-2">50K+</div>
+            <div className="text-text-secondary-dark font-dm-mono text-sm">Active Traders</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-dm-serif text-text-primary-dark mb-2">₹1000Cr+</div>
+            <div className="text-text-secondary-dark font-dm-mono text-sm">Volume Traded</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-dm-serif text-text-primary-dark mb-2">99.9%</div>
+            <div className="text-text-secondary-dark font-dm-mono text-sm">Uptime</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-dm-serif text-text-primary-dark mb-2">24/7</div>
+            <div className="text-text-secondary-dark font-dm-mono text-sm">Support</div>
+          </div>
         </div>
       </div>
     </section>
