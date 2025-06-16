@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,30 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom GetBit colors
+				'text-primary-white': '#ffffff',
+				'text-primary-dark': '#000000',
+				'text-secondary-dark': '#6c757d',
+				'brand-green': '#0d9e66',
+				'card-bg-green': '#004c2a',
+				'bg-01': '#fafafa',
+				'bg-02': '#ffffff',
+				'bg-03': '#fff8f8',
+				'color-error': '#e31837',
+				'color-alert': '#00532b',
+				'color-notice': '#ffe200',
+				'color-border': '#d5d5d5',
+				'text-orange': '#ed8200'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				'dm-mono': ['DM Mono', 'monospace'],
+				'dm-serif': ['DM Serif Display', 'serif'],
 			},
 			keyframes: {
 				'accordion-down': {
