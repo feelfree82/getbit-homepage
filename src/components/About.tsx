@@ -12,39 +12,28 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-bg-02">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-5xl font-dm-serif text-text-primary-dark mb-8">
-              India's Most Trusted Bitcoin Exchange
-            </h2>
-            <p className="text-xl text-text-secondary-dark font-dm-mono mb-12 leading-relaxed">
-              Built by traders, for traders. We combine cutting-edge security 
-              with regulatory compliance to deliver the most reliable Bitcoin 
-              trading experience in India.
-            </p>
-            
-            <div className="grid grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <stat.icon className="w-8 h-8 text-brand-green mx-auto mb-3" />
-                  <div className="text-2xl font-dm-serif text-text-primary-dark mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm font-dm-mono text-text-secondary-dark">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-dm-serif text-text-primary-dark mb-6">
+            India's Most Trusted Bitcoin Exchange
+          </h2>
+          <p className="text-lg text-text-secondary-dark font-dm-mono max-w-2xl mx-auto">
+            Built by traders, for traders. We combine cutting-edge security 
+            with regulatory compliance.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <stat.icon className="w-8 h-8 text-text-primary-dark mx-auto mb-3" />
+              <div className="text-2xl font-dm-serif text-text-primary-dark mb-1">
+                {stat.value}
+              </div>
+              <div className="text-sm font-dm-mono text-text-secondary-dark">
+                {stat.label}
+              </div>
             </div>
-          </div>
-          
-          <div className="relative">
-            <div className="bg-gradient-to-br from-brand-green to-green-700 rounded-2xl p-12 text-white text-center">
-              <div className="text-6xl mb-4">₿</div>
-              <div className="text-2xl font-dm-serif mb-2">Secure Trading</div>
-              <div className="font-dm-mono opacity-90">Zero security incidents since 2020</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
