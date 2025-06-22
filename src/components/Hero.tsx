@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Star, Phone } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
-// import LiveBTCPrice from './LiveBTCPrice'; // Commented out due to import error
+import LiveBTCPrice from './LiveBTCPrice';
 import '../App.css';
 
 const slides = [
@@ -28,10 +28,15 @@ const Hero = () => {
         </h1>
 
         {/* Subtext */}
-        <p className="text-lg text-text-secondary-dark font-dm-mono max-w-2xl mx-auto mb-8 leading-relaxed">
+        <p className="text-lg text-text-secondary-dark font-dm-mono max-w-2xl mx-auto mb-6 leading-relaxed">
           Yours to withdraw, whenever you want.<br/>
           Because Bitcoin means self-custody.
         </p>
+
+        {/* Live BTC Price */}
+        <div className="flex justify-center mb-8">
+          <LiveBTCPrice />
+        </div>
 
         {/* Download Buttons */}
         <div className="flex flex-col items-center w-full gap-3 mb-10">
