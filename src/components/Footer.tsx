@@ -11,10 +11,13 @@ const Footer = () => {
 
           {/* Center - Contact Info */}
           <div className="flex flex-col sm:flex-row gap-6 text-sm font-dm-mono text-gray-300">
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>Write to us: care@getbit.in</span>
-            </div>
+            <a 
+            href="mailto:care@getbit.in" 
+            className="flex items-center gap-2 hover:text-brand-green transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+            <span>Write to us: care@getbit.in</span>
+          </a>
             
           </div>
 

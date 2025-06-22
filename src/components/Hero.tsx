@@ -74,22 +74,34 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Carousel Slider - 3 slides visible */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <Carousel>
-            <CarouselContent>
+        {/* Carousel Slider - Responsive */}
+        <div className="w-full max-w-4xl mx-auto mb-8 md:mb-16 px-4">
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
               {slides.map((slide) => (
-                <CarouselItem key={slide.id} className="md:basis-1/2 lg:basis-1/3">
-                  <img
-                    src={slide.image}
-                    alt={slide.alt}
-                    className="w-full h-auto rounded-lg shadow-lg object-cover"
-                  />
+                <CarouselItem key={slide.id} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <div className="flex items-center justify-center rounded-lg shadow-lg bg-gray-100 dark:bg-gray-800">
+                      <img
+                        src={slide.image}
+                        alt={slide.alt}
+                        className="max-h-[70vh] w-auto object-contain transition-transform duration-300 hover:scale-105"
+                        loading="lazy"
+                        style={{ maxWidth: '100%' }}
+                      />
+                    </div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="left-2 md:left-4 h-8 w-8" />
+            <CarouselNext className="right-2 md:right-4 h-8 w-8" />
           </Carousel>
         </div>
 

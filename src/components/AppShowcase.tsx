@@ -255,13 +255,13 @@ const AppShowcase = () => {
               <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
                 <motion.h3 
                   variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-primary-dark mb-2"
+                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
                 >
                   SIP That Grows With You
                 </motion.h3>
                 <motion.p 
                   variants={itemVariants as any}
-                  className="text-lg text-text-primary-dark font-dm-mono"
+                  className="text-lg text-text-secondary-dark font-dm-mono"
                 >
                   Start small, go long.
                 </motion.p>
@@ -279,13 +279,13 @@ const AppShowcase = () => {
               <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
                 <motion.h3 
                   variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-primary-dark mb-2"
+                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
                 >
                   Self Custodial Wallet
                 </motion.h3>
                 <motion.p 
                   variants={itemVariants as any}
-                  className="text-lg text-text-primary-dark font-dm-mono"
+                  className="text-lg text-text-secondary-dark font-dm-mono"
                 >
                   We do not store your Bitcoin, you do.
                 </motion.p>
@@ -303,13 +303,13 @@ const AppShowcase = () => {
               <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
                 <motion.h3 
                   variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-primary-dark mb-2"
+                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
                 >
                   KYC & Wallet Setup
                 </motion.h3>
                 <motion.p 
                   variants={itemVariants as any}
-                  className="text-lg text-text-primary-dark font-dm-mono"
+                  className="text-lg text-text-secondary-dark font-dm-mono"
                 >
                   Quick and secure identity verification.
                 </motion.p>
@@ -327,13 +327,13 @@ const AppShowcase = () => {
               <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
                 <motion.h3 
                   variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-primary-dark mb-2"
+                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
                 >
                   24/7 Support
                 </motion.h3>
                 <motion.p 
                   variants={itemVariants as any}
-                  className="text-lg text-text-primary-dark font-dm-mono"
+                  className="text-lg text-text-secondary-dark font-dm-mono"
                 >
                   We're here to help, anytime.
                 </motion.p>
@@ -348,7 +348,7 @@ const AppShowcase = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants as any}
-          className="w-full"
+          className="w-full max-w-6xl mx-auto"
         >
           <Carousel
             className="w-full"
@@ -358,28 +358,26 @@ const AppShowcase = () => {
             }}
             setApi={setApi}
           >
-            <CarouselContent className="-ml-1">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {appScreenshots.map((screenshot) => (
-                <CarouselItem key={screenshot.id} className="pl-1 md:basis-1/3 lg:basis-1/4">
-                  <div className="p-1 h-full">
-                    <Card className="h-full">
-                      <CardContent className="p-2 h-full">
-                        <motion.img
-                          variants={imageVariants as any}
-                          whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                          src={screenshot.src}
-                          alt={screenshot.alt}
-                          className="w-full h-full object-contain rounded-md"
-                          style={{ height: '100%', width: '100%' }}
-                        />
-                      </CardContent>
-                    </Card>
+                <CarouselItem key={screenshot.id} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 lg:basis-1/4">
+                  <div className="p-1">
+                    <div className="overflow-hidden rounded-xl shadow-lg aspect-[9/16] bg-gray-100 dark:bg-gray-800">
+                      <motion.img
+                        variants={imageVariants as any}
+                        whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                        src={screenshot.src}
+                        alt={screenshot.alt}
+                        className="w-full h-full object-cover transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
-            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+            <CarouselPrevious className="left-2 md:left-4 h-8 w-8" />
+            <CarouselNext className="right-2 md:right-4 h-8 w-8" />
           </Carousel>
         </motion.div>
       </div>
