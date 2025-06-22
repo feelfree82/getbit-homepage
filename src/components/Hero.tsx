@@ -1,46 +1,84 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Star, Phone } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+// import LiveBTCPrice from './LiveBTCPrice'; // Commented out due to import error
+import '../App.css';
+
+const slides = [
+  { id: 1, image: '/img/slider1.png', alt: 'Bitcoin App Screenshot 1' },
+  { id: 2, image: '/img/slider2.png', alt: 'Bitcoin App Screenshot 2' },
+  { id: 3, image: '/img/slider3.png', alt: 'Bitcoin App Screenshot 3' },
+  { id: 4, image: '/img/slider4.png', alt: 'Bitcoin App Screenshot 4' },
+  { id: 5, image: '/img/slider5.png', alt: 'Bitcoin App Screenshot 5' },
+  { id: 6, image: '/img/slider6.png', alt: 'Bitcoin App Screenshot 6' },
+  ];
 
 const Hero = () => {
+
   return (
-    <section className="bg-bg-01 py-20">
-      <div className="container mx-auto px-4 text-center">
-        {/* New Feature Banner */}
-        <div className="inline-flex items-center bg-text-primary-dark text-text-primary-white px-4 py-2 rounded-full mb-8 font-dm-mono text-sm">
-          <span className="bg-brand-green text-text-primary-white px-2 py-1 rounded-full text-xs mr-3">
-            New
-          </span>
-          Make your Bitcoin journey secure with{' '}
-          <span className="text-brand-green ml-1 font-medium">Advanced Security →</span>
-        </div>
+    <section className="py-10">
+      <div className="container mx-auto px-4 text-center content-container">
+       
 
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl font-dm-serif text-text-primary-dark mb-6 leading-tight">
-          A Bitcoin exchange that{' '}
-          <br />
-          works like an{' '}
-          <span className="text-brand-green">Expert</span>
+        <h1 className="text-5xl md:text-6xl font-dm-serif text-text-primary-dark mb-6 leading-tight">
+          India's First <span className="text-brand-green">Bitcoin-Only </span> App With
+          <span className="text-brand-green btc-orange-bg "><br/> True Self-Custody</span>
         </h1>
 
         {/* Subtext */}
         <p className="text-lg text-text-secondary-dark font-dm-mono max-w-2xl mx-auto mb-8 leading-relaxed">
-          Great traders deserve a platform that does it all, from secure Bitcoin purchases 
-          to smooth transactions, helping you invest and track performance.
+          Yours to withdraw, whenever you want.<br/>
+          Because Bitcoin means self-custody.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button className="bg-text-primary-dark text-text-primary-white hover:bg-gray-800 font-dm-mono px-8 py-3 flex items-center gap-2">
-            <Star className="w-4 h-4" />
-            Start Trading
-          </Button>
-          <Button variant="outline" className="border-text-primary-dark text-text-primary-dark hover:bg-gray-50 font-dm-mono px-8 py-3 flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            Book a Call
-          </Button>
+        {/* Download Buttons */}
+        <div className="flex flex-col items-center w-full gap-3 mb-10">
+          {/* Store Buttons: stacked on mobile, row on md+ */}
+          <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto justify-center items-center">
+            <a href="#" className="block">
+              <img src="/img/apple-download-black-btn.svg" alt="Download on the App Store" className="h-[64.17px] w-[200px] rounded-lg object-contain" />
+            </a>
+            <a href="#" className="block">
+              <img src="/img/google-play-button.png" alt="Get it on Google Play" className="h-[64.17px] w-[200px] rounded-lg object-contain" />
+            </a>
+          </div>
+          {/* Web Version Button: always below on md+ */}
+          <button className="rounded-lg w-[200px] h-[64.17px] bg-black dark:bg-white flex items-center px-4 mt-2 md:mt-4">
+            <div className="flex flex-col items-start justify-center text-white dark:text-black mt-1">
+              <div className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                <small className="text-sm font-medium leading-none">Start on the</small>
+              </div>
+              <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Web version</h3>
+            </div>
+          </button>
         </div>
+
+        {/* Carousel Slider - 3 slides visible */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <Carousel>
+            <CarouselContent>
+              {slides.map((slide) => (
+                <CarouselItem key={slide.id} className="md:basis-1/2 lg:basis-1/3">
+                  <img
+                    src={slide.image}
+                    alt={slide.alt}
+                    className="w-full h-auto rounded-lg shadow-lg object-cover"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
+        {/* BTC Price Display - Commented out due to import error */}
+        {/* <div className="mb-10">
+          <LiveBTCPrice />
+        </div> */}
 
         {/* Trust Indicators */}
         <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">

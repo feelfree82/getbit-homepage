@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Zap, TrendingUp, Users, Clock, Lock } from 'lucide-react';
 
@@ -37,12 +36,10 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-bg-01">
-      <div className="container mx-auto px-4">
+    <section className="py-10">
+      <div className="container mx-auto px-4 content-container">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-dm-serif text-text-primary-dark mb-6">
-            Customize the full experience
-          </h2>
+
           <p className="text-lg text-text-secondary-dark font-dm-mono max-w-2xl mx-auto">
             From Bitcoin purchase to portfolio management, so your 
             investment journey is always smooth and secure.
@@ -51,12 +48,14 @@ const Features = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-bg-02 p-8 rounded-lg shadow-sm border border-color-border hover:shadow-md transition-shadow">
-              <feature.icon className="w-10 h-10 text-brand-green mb-6" />
-              <h3 className="text-xl font-dm-serif text-text-primary-dark mb-4">
+            <div key={index} className="p-8 rounded-lg shadow-sm border border-color-border hover:shadow-md transition-shadow">
+              <div className="flex justify-center mb-6">
+                <feature.icon className={`w-10 h-10 text-brand-green animate-icon-${index}`} />
+              </div>
+              <h3 className="text-xl font-dm-serif text-text-primary-dark mb-4 text-center">
                 {feature.title}
               </h3>
-              <p className="text-text-secondary-dark font-dm-mono leading-relaxed">
+              <p className="text-text-secondary-dark font-dm-mono leading-relaxed text-center">
                 {feature.description}
               </p>
             </div>

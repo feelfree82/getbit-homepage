@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,7 +6,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-bg-01">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 content-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-dm-serif text-text-primary-dark mb-6">
             Get in Touch

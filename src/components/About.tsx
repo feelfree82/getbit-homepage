@@ -1,47 +1,88 @@
-
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
 
 const About = () => {
-  const highlights = [
-    'Founded in 2020 with a mission to democratize Bitcoin trading',
-    'Over 50,000 satisfied customers across India',
-    'Processed ₹1000+ Crores in Bitcoin transactions',
-    'Zero security incidents since inception',
-    'Regulatory compliant and fully licensed'
-  ];
-
   return (
-    <section id="about" className="py-20 bg-bg-02">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-dm-serif text-text-primary-dark mb-6">
-              About GetBit.in
+    <section id="about" className="py-20 bg-bg-01">
+      <div className="container mx-auto px-4 content-container">
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          <div className="lg:col-span-2 text-left">
+            <h2 className="text-4xl md:text-5xl font-dm-serif text-text-primary-dark mb-8 text-left">
+              What makes getbit special?
             </h2>
-            <p className="text-lg text-text-secondary-dark font-dm-mono mb-8 leading-relaxed">
-              We're India's most trusted Bitcoin exchange, built by traders for traders. 
-              Our platform combines cutting-edge technology with regulatory compliance 
-              to provide a secure, fast, and reliable Bitcoin trading experience.
-            </p>
             
-            <div className="space-y-4">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-brand-green mt-1 flex-shrink-0" />
-                  <p className="text-text-secondary-dark font-dm-mono">{highlight}</p>
+            <div className="space-y-6 text-text-secondary-dark font-dm-mono leading-relaxed text-left">
+              <p className="text-lg text-left">
+                GetBit is the only platform in India that lets you buy Bitcoin instantly straight from your 
+                bank account and take full ownership by enabling you to withdraw into your self-
+                custody. No distractions, no intermediaries, just a simple, secure way to own and 
+                control your Bitcoin.
+              </p>
+              
+              <blockquote className="border-l-4 border-brand-green bg-opacity-10 pl-6 py-4 my-8 text-left">
+                <p className="text-2xl md:text-3xl font-dm-serif italic leading-relaxed text-brand-green pr-4">
+                  "I built GetBit because I wanted a simple, trustworthy way to 
+                  buy and own Bitcoin in India. No noise, no complexity, just Bitcoin done right. It's the 
+                  solution I couldn't find anywhere else. Highly recommended."
+                </p>
+                <div className="mt-3 text-text-secondary-dark font-dm-serif text-text-primary-dark font-semibold text-left underline text-xl">
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src="/img/ceo-abhay.png" 
+                      alt="Abhay, Founder & CEO" 
+                      className="w-15 h-15 rounded-full object-cover text-text-primary-dark"
+                    />
+                    <a href="https://www.linkedin.com/in/aabhay" target="_blank" rel="noopener noreferrer">Abhay - Founder & CEO, getbit</a>
+                  </div>
                 </div>
-              ))}
+              </blockquote>
+              
+              <p className="text-lg text-left">
+                To buy Bitcoin on GetBit, simply create an account and add funds through your 
+                preferred payment method. The process is quick and hassle-free, allowing you to start 
+                purchasing Bitcoin almost immediately.
+              </p>
+              
+              <p className="text-lg text-left">
+                If you wish to withdraw funds, you'll need to complete the Know Your Customer (KYC) 
+                process by submitting identification documents, such as your PAN card. Once your 
+                identity is verified, you'll be able to seamlessly transfer funds to your designated bank 
+                account.
+              </p>
+              
+              <p className="text-lg text-left">
+                getbit prioritizes the safety of your transactions. With industry-leading security protocols 
+                in place, you can trust that your personal information and financial activities are fully 
+                protected throughout the process.
+              </p>
+              
+              <p className="text-lg text-left">
+                We believe in clear pricing — no hidden transfer fees. Just complete the KYC 
+                process for secure, verified access to everything GetBit has to offer.
+              </p>
             </div>
           </div>
           
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" 
-              alt="Bitcoin trading dashboard" 
-              className="rounded-lg shadow-lg"
-            />
-            <div className="absolute inset-0 bg-brand-green opacity-10 rounded-lg"></div>
+          <div className="lg:col-span-1">
+            <div className="bg-yellow-100 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-dm-serif text-text-primary-dark mb-4">
+                Contact us
+              </h3>
+              <div className="space-y-3">
+                <a 
+                  href="mailto:care@getbit.in" 
+                  className="text-blue-600 hover:text-blue-800 font-dm-mono underline block"
+                >
+                  care@getbit.in
+                </a>
+                
+                <div className="text-sm text-text-secondary-dark font-dm-mono space-y-1">
+                  <p className="font-semibold">REMIZO TECHNOLOGIES INDIA PRIVATE LIMITED</p>
+                  <p>Corporate office: No 74, Mess Complex, 3rd Floor,</p>
+                  <p>15th Cross Road, JP Nagar 3rd Phase,</p>
+                  <p>Bangalore-560078, Karnataka IN</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

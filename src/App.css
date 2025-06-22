@@ -1,21 +1,19 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: auto;
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-(0 0 2em #646cffaa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
@@ -33,10 +31,162 @@
   }
 }
 
+.btc-orange-bg {
+  background: rgba(255, 226, 0, 0.1);
+}
+
+.btc-orange-text {
+  color: #f7931a !important;
+  font-weight: bold;
+}
+
+.btc-loading-anim {
+  letter-spacing: 0.04em;
+}
+
+.btc-ellipsis span {
+  opacity: 0.2;
+  animation: ellipsis-blink 1.2s infinite;
+}
+.btc-ellipsis span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.btc-ellipsis span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes ellipsis-blink {
+  0%, 20% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.split-flap-digit {
+  display: inline-block;
+  min-width: 1ch;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), color 0.2s;
+  will-change: transform;
+  background: none;
+  border-radius: 0.1em;
+  padding: 0 0.05em;
+  color: inherit;
+  box-shadow: none;
+}
+.split-flap-animate {
+  animation: splitflap 0.5s cubic-bezier(.4,2,.6,1);
+}
+@keyframes splitflap {
+  0% { transform: rotateX(0deg); }
+  40% { transform: rotateX(90deg); color: #222; }
+  60% { transform: rotateX(90deg); color: #222; }
+  100% { transform: rotateX(0deg); }
+}
+
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.announcement {
+  background: linear-gradient(90deg, #141514, #184a23, #0d9e66, #ed8200);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Removed sliding background for active tab transition */
+
+/* Removed continuous background gradient animation */
+/* Animation for tab content reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Subtle animations for feature icons */
+@keyframes pulse-icon-0 {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce-icon-1 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rotate-icon-2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+@keyframes wiggle-icon-3 {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+@keyframes fade-icon-4 {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes swing-icon-5 {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-icon-0 {
+  animation: pulse-icon-0 3s ease-in-out infinite;
+}
+
+.animate-icon-1 {
+  animation: bounce-icon-1 2.5s ease-in-out infinite;
+}
+
+.animate-icon-2 {
+  animation: rotate-icon-2 4s ease-in-out infinite alternate;
+}
+
+.animate-icon-3 {
+  animation: wiggle-icon-3 2s ease-in-out infinite;
+}
+
+.animate-icon-4 {
+  animation: fade-icon-4 3.5s ease-in-out infinite;
+}
+
+.animate-icon-5 {
+  animation: swing-icon-5 3s ease-in-out infinite;
+}
+
+/* Added content container class for sections that need width constraint */
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;
 }

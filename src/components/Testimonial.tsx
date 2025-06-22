@@ -1,31 +1,53 @@
-
 import React from 'react';
 
-const Testimonial = () => {
+interface TestimonialProps {
+  className?: string;
+}
+
+const Testimonial: React.FC<TestimonialProps> = ({ className = '' }) => {
+  const testimonials = [
+    { text: "Best", highlight: "Bitcoin choice in India", rest: "." },
+    { text: "Competitive prices, UPI deposits required." },
+    { text: "My", highlight: "go-to app ." },
+    { text: "GetBit helped me", highlight: "retire early" },
+    { text: "Reduced miscommunication." },
+    { text: "Managed my coins." },
+    { text: "Stopped looking in multiple places for bitcoins." },
+    { text: "Accountability has improved." },
+    { text: "Highly recommend for", highlight: "SAT stackers", rest: "." },
+    { text: "Better support across teams." },
+    { text: "Able to get", highlight: "money out in record time", rest: "." },
+    { text: "Ability to", highlight: "make better decisions", rest: "." },
+    { text: "Great business values,", highlight: "great service." },
+    { text: "Top experience for", highlight: "Bitcoin buyers", rest: "." },
+    { text: "Easier to track transactions", rest: "." }
+  ];
+
   return (
-    <section className="py-16 bg-bg-02">
-      <div className="container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
-              alt="Customer testimonial" 
-              className="w-16 h-16 rounded-full mx-auto mb-4"
-            />
-          </div>
-          
-          <h3 className="text-2xl font-dm-serif text-text-primary-dark mb-4">
-            Quick and Secure Trading
-          </h3>
-          
-          <blockquote className="text-lg text-text-secondary-dark font-dm-mono mb-6 leading-relaxed">
-            "We've traded thousands of Bitcoin transactions daily - GetBit's 
-            platform is the only thing that keeps us confident and secure."
-          </blockquote>
-          
-          <cite className="text-sm font-dm-mono text-text-secondary-dark">
-            Raj Patel, Crypto Investor, Mumbai
-          </cite>
+    <section className={`py-16 ${className}`}>
+      <div className="container mx-auto px-4 content-container">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-dm-serif text-text-primary-dark mb-6">
+            What our customers say
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index}
+              className="bg-bg-02 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+            >
+              <p className="text-text-primary-dark text-lg font-dm-mono leading-relaxed">
+                "{testimonial.text}
+                {testimonial.highlight && (
+                  <span className="bg-yellow-200 px-1 rounded">
+                    {testimonial.highlight}
+                  </span>
+                )}
+                {testimonial.rest || ''}"
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

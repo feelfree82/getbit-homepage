@@ -1,17 +1,24 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   return (
-    <header className="bg-bg-02 border-b border-color-border">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-bg-01 border-b">
+      <div className="container mx-auto px-4 py-4 content-container">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <div className="text-2xl font-bold font-dm-serif text-text-primary-dark">
-              GetBit.in
+            <div className="logo" style={{ width: '236px' }}>
+              <img src="../img/logo.svg" alt="GetBit.in" />
             </div>
-            <nav className="hidden md:flex space-x-6 font-dm-mono text-sm">
+            {/* New Feature Banner 
+        <div className="inline-flex items-center bg-text-primary-dark text-text-primary-white px-4 py-2 rounded-full mb-8 font-dm-mono text-sm announcement">
+          <span className="bg-brand-green text-text-primary-white px-2 py-1 rounded-full text-xs mr-3">
+            New
+          </span>
+          <span>Make your Bitcoin journey secure with{' '}</span>
+          <span className="ml-1 font-medium">Multisig Theya Wallet →</span>
+        </div>
+             {/*<nav className="hidden md:flex space-x-6 font-dm-mono text-sm">
               <a href="#start" className="text-text-secondary-dark hover:text-text-primary-dark transition-colors">
                 Start Here
               </a>
@@ -30,11 +37,8 @@ const Header = () => {
               <a href="#faqs" className="text-text-secondary-dark hover:text-text-primary-dark transition-colors">
                 FAQs
               </a>
-            </nav>
+            </nav>*/}
           </div>
-          <Button className="bg-text-primary-dark text-text-primary-white font-dm-mono hover:bg-gray-800">
-            Get Started
-          </Button>
         </div>
       </div>
     </header>
