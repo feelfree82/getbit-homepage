@@ -37,15 +37,33 @@ const Hero = () => {
         <div className="flex flex-col items-center w-full gap-3 mb-10">
           {/* Store Buttons: stacked on mobile, row on md+ */}
           <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto justify-center items-center">
-            <a href="#" className="block">
-              <img src="/img/apple-download-black-btn.svg" alt="Download on the App Store" className="h-[64.17px] w-[200px] rounded-lg object-contain" />
+            <a href="#" className="block opacity-50 cursor-not-allowed" aria-disabled="true" title="Coming soon">
+              <img 
+                src="/img/apple-download-black-btn.svg" 
+                alt="Download on the App Store" 
+                className="h-[64.17px] w-[200px] rounded-lg object-contain" 
+              />
             </a>
-            <a href="#" className="block">
-              <img src="/img/google-play-button.png" alt="Get it on Google Play" className="h-[64.17px] w-[200px] rounded-lg object-contain" />
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.getbitmoney.getbit&hl=en_IN" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block hover:opacity-90 transition-opacity"
+            >
+              <img 
+                src="/img/google-play-button.png" 
+                alt="Get it on Google Play" 
+                className="h-[64.17px] w-[200px] rounded-lg object-contain" 
+              />
             </a>
           </div>
           {/* Web Version Button: always below on md+ */}
-          <button className="rounded-lg w-[200px] h-[64.17px] bg-black dark:bg-white flex items-center px-4 mt-2 md:mt-4">
+          <a 
+            href="https://www.getbit.in/#/mobile_number_view" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="rounded-lg w-[200px] h-[64.17px] bg-black dark:bg-white flex items-center justify-center px-4 mt-2 md:mt-4 hover:opacity-90 transition-opacity"
+          >
             <div className="flex flex-col items-start justify-center text-white dark:text-black mt-1">
               <div className="flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
@@ -53,7 +71,7 @@ const Hero = () => {
               </div>
               <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Web version</h3>
             </div>
-          </button>
+          </a>
         </div>
 
         {/* Carousel Slider - 3 slides visible */}
