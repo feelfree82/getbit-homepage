@@ -162,8 +162,12 @@ const AppShowcase = () => {
           </h2>
         </div>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="bg-white/20 p-1 rounded-full flex flex-wrap justify-center mb-8 space-x-4">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full relative">
+          <div className="mb-10 sm:mb-0">
+            <TabsList className="bg-white/20 px-4 sm:px-8 py-4 rounded-full flex flex-wrap justify-center items-center gap-3 mx-auto w-full sm:w-auto">
+            {/* Tab items */}
+            {/* Tab items */}
+            {/* Tab items */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -220,125 +224,136 @@ const AppShowcase = () => {
               </TabsTrigger>
             </motion.div>
           </TabsList>
+          </div>
 
-          <TabsContent value="dashboard" className="mt-6 sm:mt-10 md:mt-8 relative z-10">
-            <motion.div 
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={containerVariants as any}
-              className="container mx-auto px-4"
-            >
-              <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
-                <motion.h3 
-                  variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
-                >
-                  Buy & Sell Instantly
-                </motion.h3>
-                <motion.p 
-                  variants={itemVariants as any}
-                  className="text-lg text-text-secondary-dark font-dm-mono"
-                >
-                  Best Bitcoin Prices, Zero Surprises.
-                </motion.p>
+          <TabsContent value="dashboard" className="relative z-10">
+            <div className="pt-10 sm:pt-0 min-h-[120px] sm:min-h-[100px] md:min-h-0">
+              <motion.div 
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants as any}
+                className="container mx-auto px-4"
+              >
+                <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
+                  <motion.h3 
+                    variants={itemVariants as any}
+                    className="text-2xl font-dm-serif text-text-secondary-dark mb-2 mt-6"
+                  >
+                    Buy & Sell Instantly
+                  </motion.h3>
+                  <motion.p 
+                    variants={itemVariants as any}
+                    className="text-lg text-text-secondary-dark font-dm-mono"
+                  >
+                    Best Bitcoin Prices, Zero Surprises.
+                  </motion.p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </TabsContent>
 
-          <TabsContent value="checkout" className="mt-6 sm:mt-10 md:mt-8 relative z-10">
-            <motion.div 
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={containerVariants as any}
-              className="container mx-auto px-4"
-            >
-              <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
-                <motion.h3 
-                  variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
-                >
-                  SIP That Grows With You
-                </motion.h3>
-                <motion.p 
-                  variants={itemVariants as any}
-                  className="text-lg text-text-secondary-dark font-dm-mono"
-                >
-                  Start small, go long.
-                </motion.p>
+          <TabsContent value="checkout" className="relative z-10">
+            <div className="pt-10 sm:pt-0 min-h-[120px] sm:min-h-[100px] md:min-h-0">
+              <motion.div 
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants as any}
+                className="container mx-auto px-4"
+              >
+                <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
+                  <motion.h3 
+                    variants={itemVariants as any}
+                    className="text-2xl font-dm-serif text-text-secondary-dark mb-2 mt-6"
+                  >
+                    SIP That Grows With You
+                  </motion.h3>
+                  <motion.p 
+                    variants={itemVariants as any}
+                    className="text-lg text-text-secondary-dark font-dm-mono"
+                  >
+                    Start small, go long.
+                  </motion.p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </TabsContent>
 
-          <TabsContent value="email" className="mt-6 sm:mt-10 md:mt-8 relative z-10">
-            <motion.div 
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={containerVariants as any}
-              className="container mx-auto px-4"
-            >
-              <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
-                <motion.h3 
-                  variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
-                >
-                  Self Custodial Wallet
-                </motion.h3>
-                <motion.p 
-                  variants={itemVariants as any}
-                  className="text-lg text-text-secondary-dark font-dm-mono"
-                >
-                  We do not store your Bitcoin, you do.
-                </motion.p>
+          <TabsContent value="email" className="relative z-10">
+            <div className="pt-10 sm:pt-0 min-h-[120px] sm:min-h-[100px] md:min-h-0">
+              <motion.div 
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants as any}
+                className="container mx-auto px-4"
+              >
+                <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
+                  <motion.h3 
+                    variants={itemVariants as any}
+                    className="text-2xl font-dm-serif text-text-secondary-dark mb-2 mt-6"
+                  >
+                    Self Custodial Wallet
+                  </motion.h3>
+                  <motion.p 
+                    variants={itemVariants as any}
+                    className="text-lg text-text-secondary-dark font-dm-mono"
+                  >
+                    We do not store your Bitcoin, you do.
+                  </motion.p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </TabsContent>
 
-          <TabsContent value="order-mail" className="mt-6 sm:mt-10 md:mt-8 relative z-10">
-            <motion.div 
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={containerVariants as any}
-              className="container mx-auto px-4"
-            >
-              <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
-                <motion.h3 
-                  variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
-                >
-                  KYC & Wallet Setup
-                </motion.h3>
-                <motion.p 
-                  variants={itemVariants as any}
-                  className="text-lg text-text-secondary-dark font-dm-mono"
-                >
-                  Quick and secure identity verification.
-                </motion.p>
+          <TabsContent value="order-mail" className="relative z-10">
+            <div className="pt-10 sm:pt-0 min-h-[120px] sm:min-h-[100px] md:min-h-0">
+              <motion.div 
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants as any}
+                className="container mx-auto px-4"
+              >
+                <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
+                  <motion.h3 
+                    variants={itemVariants as any}
+                    className="text-2xl font-dm-serif text-text-secondary-dark mb-2 mt-6"
+                  >
+                    KYC & Wallet Setup
+                  </motion.h3>
+                  <motion.p 
+                    variants={itemVariants as any}
+                    className="text-lg text-text-secondary-dark font-dm-mono"
+                  >
+                    Quick and secure identity verification.
+                  </motion.p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </TabsContent>
 
-          <TabsContent value="scan-app" className="mt-6 sm:mt-10 md:mt-8 relative z-10">
-            <motion.div 
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={containerVariants as any}
-              className="container mx-auto px-4"
-            >
-              <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
-                <motion.h3 
-                  variants={itemVariants as any}
-                  className="text-2xl font-dm-serif text-text-secondary-dark mb-2"
-                >
-                  24/7 Support
-                </motion.h3>
-                <motion.p 
-                  variants={itemVariants as any}
-                  className="text-lg text-text-secondary-dark font-dm-mono"
-                >
-                  We're here to help, anytime.
-                </motion.p>
+          <TabsContent value="scan-app" className="relative z-10">
+            <div className="pt-10 sm:pt-0 min-h-[120px] sm:min-h-[100px] md:min-h-0">
+              <motion.div 
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants as any}
+                className="container mx-auto px-4"
+              >
+                <motion.div variants={itemVariants as any} className="max-w-4xl mx-auto text-center">
+                  <motion.h3 
+                    variants={itemVariants as any}
+                    className="text-2xl font-dm-serif text-text-secondary-dark mb-2 mt-6"
+                  >
+                    24/7 Support
+                  </motion.h3>
+                  <motion.p 
+                    variants={itemVariants as any}
+                    className="text-lg text-text-secondary-dark font-dm-mono"
+                  >
+                    We're here to help, anytime.
+                  </motion.p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </TabsContent>
         </Tabs>
       </div>

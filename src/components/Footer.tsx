@@ -58,9 +58,9 @@ const Footer = () => {
             <div className="flex gap-3">
               {/* Web Version Button */}
               <a 
-                href="https://www.getbit.in/#/mobile_number_view" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="https://stage.getbit.in/#/mobile_number_view" 
+                target="_top" 
+                rel="noopener"
                 className="rounded-md h-11 bg-black dark:bg-white flex items-center px-4 border border-gray-500 hover:opacity-90 transition-opacity"
               >
                 <div className="flex flex-col items-center justify-center text-white dark:text-black">

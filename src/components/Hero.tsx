@@ -64,9 +64,9 @@ const Hero = () => {
           </div>
           {/* Web Version Button: always below on md+ */}
           <a 
-            href="https://www.getbit.in/#/mobile_number_view" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="https://stage.getbit.in/#/mobile_number_view" 
+            target="_top" 
+            rel="noopener"
             className="rounded-lg w-[200px] h-[64.17px] bg-black dark:bg-white flex items-center justify-center px-4 mt-2 md:mt-4 hover:opacity-90 transition-opacity"
           >
             <div className="flex flex-col items-start justify-center text-white dark:text-black mt-1">
